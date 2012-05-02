@@ -1,11 +1,10 @@
 ---
 server: irc.freenode.net
 port: 6667
-nick: rubot
+nick: chillbot
 verbose: true
 channels:
-  - "#rubot"
-  - "#sfs"
+  - "#iz"
 authorized_nicks:
-  - thorncp
+  - mculp
 message_delay: 1
