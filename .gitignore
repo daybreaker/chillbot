@@ -1,0 +1,6 @@
+resources/ratings.yml
+resources/todo.yml
+Gemfile.lock
+.eprj
+db/*.db
+.rvmrc
