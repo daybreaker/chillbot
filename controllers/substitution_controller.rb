@@ -22,6 +22,10 @@ class SubstitutionController < Rubot::Controller
   listener :matches => %r{.*(\bsmash\b|\bbang\b).*}i do
     reply "Hey #{message.from}, did you mean smang?"
   end
+  
+  listener :matches => /diablo 3/ do
+    reply "GET A LIFE NERD"
+  end
 
   on :reload do
     # if only Winston knew about this method...
