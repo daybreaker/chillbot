@@ -1,10 +1,10 @@
 ---
 server: irc.freenode.net
 port: 6667
-nick: chillbot
+nick: bradbot
 verbose: true
 channels:
-  - "#iz"
+  - "#bradbot-test"
 authorized_nicks:
-  - mculp
+  - daybreaker
 message_delay: 1
