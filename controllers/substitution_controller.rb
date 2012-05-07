@@ -26,6 +26,14 @@ class SubstitutionController < Rubot::Controller
   listener :matches => /diablo 3/ do
     reply "GET A LIFE NERD"
   end
+  
+  listener :matches => /come on chillbot/ do
+    t =  Time.new(2012, 5, 15) - Time.now
+    mm, ss = t.divmod(60)            #=> [4515, 21]
+    hh, mm = mm.divmod(60)           #=> [75, 15]
+    dd, hh = hh.divmod(24)           #=> [3, 3]
+    reply "%d days, %d hours, %d minutes and %d seconds until Diablo 3... NERD" % [dd, hh, mm, ss]
+  end
 
   on :reload do
     # if only Winston knew about this method...
