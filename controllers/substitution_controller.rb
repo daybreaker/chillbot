@@ -23,8 +23,8 @@ class SubstitutionController < Rubot::Controller
     reply "Hey #{message.from}, did you mean smang?"
   end
   
-  listener :matches => /diablo 3/ do
-    reply "DIABLO WALKS THE LANDS AGAIN."
+  listener :matches => /cow/ do
+    reply "There is no cow level."
   end
 
   on :reload do
