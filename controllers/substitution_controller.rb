@@ -26,6 +26,18 @@ class SubstitutionController < Rubot::Controller
   listener :matches => /diablo 3/ do
     reply "DIABLO WALKS THE LANDS AGAIN."
   end
+  
+  listener :matches => /troll/ do
+    reply "hey #{message.from}, did you mean krgtroll?"
+  end
+  
+  listener :matches => /trolling/ do
+    reply "hey #{message.from}, did you mean krgtrolling?"
+  end
+  
+  listener :matches => /trolled/ do
+    reply "hey #{message.from}, did you mean krgtrolled?"
+  end
 
   on :reload do
     # if only Winston knew about this method...
