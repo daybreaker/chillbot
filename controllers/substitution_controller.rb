@@ -23,19 +23,15 @@ class SubstitutionController < Rubot::Controller
     reply "Hey #{message.from}, did you mean smang?"
   end
   
-  listener :matches => /cow/ do
-    reply "There is no cow level."
-  end
-  
-  listener :matches => /troll/ do
+  listener :matches => %r{.*(\btroll\b).*}i do
     reply "hey #{message.from}, did you mean krgtroll?"
   end
   
-  listener :matches => /trolling/ do
+  listener :matches => %r{.*(\btrolling\b).*}i do
     reply "hey #{message.from}, did you mean krgtrolling?"
   end
   
-  listener :matches => /trolled/ do
+  listener :matches => %r{.*(\btrolled\b).*}i do
     reply "hey #{message.from}, did you mean krgtrolled?"
   end
 
