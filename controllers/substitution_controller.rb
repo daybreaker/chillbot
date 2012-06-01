@@ -34,6 +34,10 @@ class SubstitutionController < Rubot::Controller
   listener :matches => %r{.*(\btrolled\b).*}i do
     reply "hey #{message.from}, did you mean krgtrolled?"
   end
+  
+  listener :matches => %r{.*(\how much fo one rib\b).*}i do
+    reply "$2"
+  end
 
   on :reload do
     # if only Winston knew about this method...
