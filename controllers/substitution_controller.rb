@@ -24,15 +24,15 @@ class SubstitutionController < Rubot::Controller
   end
   
   listener :matches => %r{.*(\btroll\b).*}i do
-    reply "hey #{message.from}, did you mean krgtroll?"
+    reply "hey #{message.from}, did you mean jroel?"
   end
   
   listener :matches => %r{.*(\btrolling\b).*}i do
-    reply "hey #{message.from}, did you mean krgtrolling?"
+    reply "hey #{message.from}, did you mean jroeling?"
   end
   
   listener :matches => %r{.*(\btrolled\b).*}i do
-    reply "hey #{message.from}, did you mean krgtrolled?"
+    reply "hey #{message.from}, did you mean jroeled?"
   end
   
   listener :matches => %r{.*(\how much fo one rib\b).*}i do
