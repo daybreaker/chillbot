@@ -5,7 +5,9 @@ class QuoteController < Rubot::Controller
 
   command :addquote, :addq do
     msg, author = Quote.parse(message.text)
-    Quote.add(msg, author)
+    if Quote.add(msg, author)
+      reply "quote added: #{msg[1, 10]}..."
+    end
   end
 end
 
