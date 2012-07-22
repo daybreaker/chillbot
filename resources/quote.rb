@@ -1,7 +1,7 @@
 class Quote < Sequel::Model
   def self.random
     # this is a pretty shitty way of getting a random record
-    DB["select * from quotes order by random() limit 1"].first
+    DB["select * from quotes order by random() limit 1"].first[:quote]
   end
   
   def self.add(quote, author)
