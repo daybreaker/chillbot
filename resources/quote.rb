@@ -9,7 +9,9 @@ class Quote < Sequel::Model
   end
 
   def self.parse(message)
-    if message =~ /<(.*)>/ || message =~ /--(.*)$/
+    # parses author name from typical irc paste: <rhiza> quotequotequote
+    # or parses author name from --rhiza at end of line
+    if message =~ /^<(.*)>/ || message =~ /--(.*)$/
       author = $1
     end
 
