@@ -35,7 +35,7 @@ namespace :db do
   # this will be moved into the framework bin file, probably similar to rails' generators
   #   rubot generate migration <name>
   desc "generate a new migration"
-  task :migration, :name do |t, args|
+  task :migration, [:name] do |t, args|
     raise "No name given" unless args[:name]
     stamp = Time.now.utc.strftime("%Y%m%d%H%M%S")
     filename = File.join "db", "migrations", "#{stamp}_#{args[:name]}.rb"
