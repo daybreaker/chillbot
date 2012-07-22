@@ -4,8 +4,11 @@ class QuoteController < Rubot::Controller
   end
 
   command :addquote, :addq do
-    message, author = Quote.parse(message.text)
-    Quote.add(message, author)
+    msg, author = Quote.parse(message.text)
+    reply "parsing #{message.text}"
+    reply "message = #{msg[1, 25]}"
+    reply "author = #{author}"
+    Quote.add(msg, author)
   end
 end
 
