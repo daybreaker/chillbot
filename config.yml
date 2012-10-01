@@ -1,10 +1,10 @@
 ---
 server: irc.freenode.net
 port: 6667
-nick: chillbot
+nick: Botdgreat
 verbose: true
 channels:
   - "#iz"
 authorized_nicks:
-  - mculp
+  - Robdgreat
 message_delay: 1

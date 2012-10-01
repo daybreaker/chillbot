@@ -4,9 +4,9 @@ class WebUtil < Rubot::WebResource
 
     title = doc.search("meta[name='title']").first
     if title
-      title.attributes["content"].text.strip
+      title.attributes["content"].text.strip.gsub(/\s+/, ' ')
     else
-      doc.css("head title").text.strip
+      doc.css("head title").text.strip.gsub(/\s+/, ' ')
     end
   end
 end
