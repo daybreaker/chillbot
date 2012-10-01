@@ -1,6 +1,6 @@
 class WebUtil < Rubot::WebResource
   def self.title(link)
-    doc = get_url(link.to_s)
+    doc = get_url_follow(link.to_s)
 
     title = doc.search("meta[name='title']").first
     if title
