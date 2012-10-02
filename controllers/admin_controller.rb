@@ -34,7 +34,7 @@ class AdminController < Rubot::Controller
   command :contributors do
     begin
       repo = Git.open(Dir.pwd)
-      logs = repo.logs(500) # just get a sufficiently large number for now
+      logs = repo.log(500) # just get a sufficiently large number for now
       reply logs.map { |log| g.object(log).author.name }.uniq.join(', ')
     rescue Exception => e
       reply "error retrieving contributors: #{e.message}"
