@@ -31,6 +31,16 @@ class AdminController < Rubot::Controller
     end
   end
 
+  command :contributors do
+    begin
+      repo = Git.open(Dir.pwd)
+      logs = repo.logs(500) # just get a sufficiently large number for now
+      logs.map { |log| g.object(log).author.name }.uniq
+    rescue Exception => e
+      reply "error retrieving contributors: #{e.message}"
+    end
+  end
+
   on :quit do
     puts "totally caught the quit event!"
   end
