@@ -2,7 +2,6 @@ require "yaml"
 require "yajl"
 require "tweetstream"
 require "singleton"
-require "debugger"
 
 class TweetStreamer
   
