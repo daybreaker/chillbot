@@ -42,7 +42,7 @@ class AdminController < Rubot::Controller
       love_u_this_much.keys.each { |key| names.delete(key) }
       names += love_u_this_much.values
 
-      reply names.join(', ')
+      reply names.uniq.join(', ')
     rescue Exception => e
       reply "error retrieving contributors: #{e.message}"
     end
