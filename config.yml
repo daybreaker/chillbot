@@ -4,7 +4,7 @@ port: 6667
 nick: chillbot
 verbose: true
 channels:
-  - "#iztestz"
+  - "#iz"
 authorized_nicks:
-  - bhelx 
+  - mculp 
 message_delay: 1
