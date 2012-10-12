@@ -24,7 +24,6 @@ class TweetStreamController < Rubot::Controller
       else
         reply "Not Tracking #{untrack}"
       end
-
     when follow = message.text.sub!(/^follow/, '')
       if user = TweetStreamer.instance.get_user(follow)
         Tweeple.find_or_create(:twitter_id => user.id, :screen_name => user.screen_name)
