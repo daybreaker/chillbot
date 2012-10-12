@@ -9,6 +9,22 @@ class TweetStreamController < Rubot::Controller
     when message.text.match(/^following/)
       screen_names = Tweeple.screen_names
       reply "Following #{screen_names.empty? ? 'nobody! :/' : screen_names.join(', ')}"
+    when message.text.match(/^tracking/)
+      reply "Tracking: #{TwitterKeywords.keywords.join(', ')}"
+    when track = message.text.sub!(/^track/, '')
+      track.strip!
+      if TwitterKeywords.find_or_create(:keyword => track)
+        reply "Tracking: #{TwitterKeywords.keywords.join(', ')}"
+      end
+    when untrack = message.text.sub!(/^untrack/, '')
+      untrack.strip!
+      if keyword = TwitterKeywords.find(:keyword => untrack)
+        keyword.destroy
+        reply "'No longer tracking #{untrack}'. Tracking: #{TwitterKeywords.keywords.join(', ')}"
+      else
+        reply "Not Tracking #{untrack}"
+      end
+
     when follow = message.text.sub!(/^follow/, '')
       if user = TweetStreamer.instance.get_user(follow)
         Tweeple.find_or_create(:twitter_id => user.id, :screen_name => user.screen_name)
