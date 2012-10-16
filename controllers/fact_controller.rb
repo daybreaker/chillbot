@@ -4,7 +4,8 @@ class FactController < Rubot::Controller
   end
 
   command :free_fact do
-    reply "FACT: #{Fact.random}"
+    fact = Fact.random[:fact]
+    reply "FACT: #{fact}" if fact
   end
 
 end
