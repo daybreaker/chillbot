@@ -7,3 +7,4 @@ class FactController < Rubot::Controller
       reply "k. got it." if Fact.add(message.text)
     end
   end
+end
