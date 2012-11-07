@@ -7,10 +7,8 @@ class Quote < Sequel::Model
   def self.search(term)
     results = where("lower(quote) like '%#{term.downcase}%'").all
 
-    result_count = results.size
-
-    if result_count.any? 
-      "(#{result_count} #{term} quotes): #{result.sample[:quote]}"
+    if results.any? 
+      "(#{results.size} #{term} quotes): #{result.sample[:quote]}"
     else
       "nothing matched #{term}"
     end
