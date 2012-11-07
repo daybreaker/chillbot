@@ -5,7 +5,8 @@ class Quote < Sequel::Model
   end
 
   def self.search(term)
-    where("lower(quote) like '%#{term.downcase}%'").all.sample.try(:[], :quote) || "nothing matched #{term}"
+    result = where("lower(quote) like '%#{term.downcase}%'").all.sample
+    result ? result[:quote] : "nothing matched #{term}"
   end
 
   def self.add(quote, author)
