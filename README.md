@@ -18,6 +18,9 @@ Commands
 - `!remind` - set a reminder. use `10h` format. i.e. `!remind 1h GET DA MEATLOAF OUT DA OVEN`
 - `!up` - uptime
 - `!contributors` - list of contributors
+- `!fact <fact>` - add a fact
+- `!fact` - get a fact
+
 
 Other stuff
 ===========
