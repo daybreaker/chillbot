@@ -21,6 +21,7 @@ Commands
 - `!fact <fact>` - add a fact
 - `!fact` - get a fact
 - `!goodnews <message>` - GOOD NEWS EVERYONE meme generator.
+- `!lod` - look of disapproval
 
 
 
