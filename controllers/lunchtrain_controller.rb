@@ -1,4 +1,5 @@
 class LunchtrainController < Rubot::Controller
+  # meh
   TRAINS = []
 
   command :lunchtrain do

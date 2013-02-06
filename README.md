@@ -23,7 +23,13 @@ Commands
 - `!goodnews <message>` - GOOD NEWS EVERYONE meme generator.
 - `!lod` - look of disapproval
 
-
+## Lunchtrain
+- `!lunchtrain new <time> <destination>` - Create a new lunchtrain.
+Time must be in 24 hour format. (13:00)
+- `!lunchtrain list` - List currently scheduled trains.
+- `!lunchtrain join <id>` - Join the specified train. Id's are 5 digit
+hexs and can be viewed via `!lunchtrain list`
+ 
 
 Other stuff
 ===========
