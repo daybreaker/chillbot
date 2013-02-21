@@ -35,7 +35,8 @@ class TweetStreamer
     if block_given?          
       stop
       ids = Tweeple.twitter_ids
-      @client.filter(:follow => ids) do |status|
+      keywords = TwitterKeywords.keywords
+      @client.filter(:follow => ids, :track => keywords) do |status|
         callback.call(status)
       end
     end

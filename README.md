@@ -18,6 +18,18 @@ Commands
 - `!remind` - set a reminder. use `10h` format. i.e. `!remind 1h GET DA MEATLOAF OUT DA OVEN`
 - `!up` - uptime
 - `!contributors` - list of contributors
+- `!fact <fact>` - add a fact
+- `!fact` - get a fact
+- `!goodnews <message>` - GOOD NEWS EVERYONE meme generator.
+- `!lod` - look of disapproval
+
+## Lunchtrain
+- `!lunchtrain new <time> <destination>` - Create a new lunchtrain.
+Time must be in 24 hour format. (13:00)
+- `!lunchtrain list` - List currently scheduled trains.
+- `!lunchtrain join <id>` - Join the specified train. Id's are 5 digit
+hexs and can be viewed via `!lunchtrain list`
+ 
 
 Other stuff
 ===========
