@@ -1,6 +1,5 @@
 require 'yajl'
-require 'uri'
-require 'net/http'
+require 'open-uri'
 
 class Bitcoin
   def self.url
@@ -8,9 +7,7 @@ class Bitcoin
   end
 
   def self.stats
-    uri = URI.parse(url)
-    response = Net::HTTP.get_response(uri)
-    Yajl::Parser.parse(response.body)
+    Yajl::Parser.parse(open(url).read)
   end
 
   def self.average_price
