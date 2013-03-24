@@ -1,8 +1,19 @@
-require 'mtgox'
+require 'yajl'
+require 'uri'
+require 'net/http'
 
-MtGox.configure do |config|
-  config.key = '5506b175-6873-4cb5-91a2-6d0d00a90404'
-  config.secret = 'oWF1PXX/AjTYdCtbptbre0jtsIrOXvBRC0jq0zECqHioJdhOzTm25W0Q2lRmHTV+MSnFOYmdWOx0PuuXSqL7fw=='
+class Bitcoin
+  def self.url
+    'https://mtgox.com/api/1/BTCUSD/ticker'
+  end
+
+  def self.stats
+    uri = URI.parse(url)
+    response = Net::HTTP.get_response(uri)
+    Yajl::Parser.parse(response.body)
+  end
+
+  def self.average_price
+    stats['return']['avg']['display']
+  end
 end
-
-
