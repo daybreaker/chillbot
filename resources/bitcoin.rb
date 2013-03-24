@@ -13,4 +13,8 @@ class Bitcoin
   def self.average_price
     stats['return']['avg']['display']
   end
+
+  def self.last_price
+    stats['return']['last']['display']
+  end
 end
