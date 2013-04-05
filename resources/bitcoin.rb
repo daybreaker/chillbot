@@ -25,6 +25,14 @@ module Bitcoin
       (average_price.to_f / last_price.to_f) > 1.17
     end
 
+    def SELL_QUICK_WTF_COME_ON?
+      (average_price.to_f / last_price.to_f) < 0.9
+    end
+
+    def HOLY_FUCKING_SHIT_SELL_NOW?
+      (average_price.to_f / last_price.to_f) < 0.8
+    end
+
     private
 
     def call_and_then_parse
