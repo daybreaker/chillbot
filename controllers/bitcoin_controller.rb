@@ -22,8 +22,6 @@ class BitcoinController < Rubot::Controller
       server.message "#iz", "hey mculp, it's a good time to sell."
     elsif response.HOLY_FUCKING_SHIT_SELL_NOW?
       server.message "#iz", "hey mculp, it's a *really* good time to sell."
-    else
-      server.message "#iz", "hey mculp fuk"
     end
   end
 end
