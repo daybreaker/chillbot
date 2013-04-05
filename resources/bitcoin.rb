@@ -1,20 +1,35 @@
 require 'yajl'
 require 'open-uri'
 
-class Bitcoin
-  def self.url
-    'https://mtgox.com/api/1/BTCUSD/ticker'
-  end
+module Bitcoin
+  URL = 'https://mtgox.com/api/1/BTCUSD/ticker'
 
-  def self.stats
-    Yajl::Parser.parse(open(url).read)
-  end
+  class Call
+    def initialize
+      @stats = call_and_then_parse
+    end
 
-  def self.average_price
-    stats['return']['avg']['display']
-  end
+    def average_price
+      @stats['return']['avg']['display']
+    end
 
-  def self.last_price
-    stats['return']['last']['display']
+    def last_price
+      @stats['return']['last']['display']
+    end
+
+    def good_time_to_buy?
+      (average_price.to_f / last_price.to_f) > 1.085
+    end
+
+    def really_good_time_to_buy?
+      (average_price.to_f / last_price.to_f) > 1.17
+    end
+
+    private
+
+    def call_and_then_parse
+      json = open(Bitcoin::URL).read
+      Yajl::Parser.parse(json)
+    end
   end
 end
