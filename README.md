@@ -22,6 +22,7 @@ Commands
 - `!fact` - get a fact
 - `!goodnews <message>` - GOOD NEWS EVERYONE meme generator.
 - `!lod` - look of disapproval
+- `!grimdark` - get a random Warhammer 40,000 proverb or random proverb of a certain topic with `!grimdark <message>`
 
 ## Lunchtrain
 - `!lunchtrain new <time> <destination>` - Create a new lunchtrain.
