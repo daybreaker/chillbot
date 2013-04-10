@@ -27,7 +27,6 @@ class SubstitutionController < Rubot::Controller
     reply "GET A LIFE NERD"
   end
   
-  
   listener :matches => /come on chillbot/ do
     t =  Time.new(2012, 5, 15) - Time.now
     mm, ss = t.divmod(60)            #=> [4515, 21]
